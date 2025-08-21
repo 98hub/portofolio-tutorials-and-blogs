@@ -1,41 +1,41 @@
-# Website
+# 🚀 Panduan Cloud Hosting dan VPS
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Selamat datang di repositori resmi untuk platform panduan komprehensif yang didedikasikan untuk eksplorasi dan pemahaman **Cloud Hosting, cPanel, dan VPS**.
 
-## Installation
+Proyek ini dirancang untuk menjadi sumber daya utama bagi pemula maupun profesional yang ingin menguasai seluk-beluk infrastruktur server dan manajemen web. Kami menyajikan materi yang terstruktur, mulai dari konsep dasar hingga topik-topik lanjutan, untuk membantu Anda memperoleh kontrol penuh atas lingkungan web Anda.
 
-```bash
-yarn
-```
+---
 
-## Local Development
+### 💡 Visi Kami
 
-```bash
-yarn start
-```
+Kami meyakini bahwa pembelajaran yang paling efektif terjadi melalui pengalaman langsung dan aplikasi praktis. Oleh karena itu, setiap tutorial disusun dengan metodologi yang jelas dan praktis untuk memfasilitasi penerapan langsung dari pengetahuan yang diperoleh.
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+### 📚 Cakupan Materi
 
-## Build
+Repositori ini mencakup panduan mendalam untuk topik-topik berikut:
 
-```bash
-yarn build
-```
+1.  **Panduan Cloud Hosting**: Membahas prinsip-prinsip dasar _cloud hosting_, perbedaan antara arsitektur server, dan kriteria seleksi penyedia layanan.
+2.  **Panduan cPanel**: Fokus pada penguasaan cPanel, antarmuka kontrol server, termasuk cara mengelola file, basis data, akun email, hingga instalasi CMS populer.
+3.  **Panduan VPS (Virtual Private Server)**: Memperkenalkan konsep dan kapabilitas VPS, serta instruksi untuk penyiapan server, implementasi keamanan, dan pemeliharaan server mandiri.
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+---
 
-## Deployment
+### 🤝 Kontribusi
 
-Using SSH:
+Kami sangat mengundang Anda untuk berkontribusi pada proyek ini. Jika Anda menemukan kesalahan, memiliki saran perbaikan, atau ingin menambahkan konten baru, silakan:
 
-```bash
-USE_SSH=true yarn deploy
-```
+1.  **Fork** repositori ini.
+2.  Buat _branch_ baru untuk fitur atau perbaikan Anda (`git checkout -b feature/nama-fitur`).
+3.  Lakukan perubahan dan _commit_ (`git commit -m "Deskripsi perubahan"`).
+4.  Dorong (_push_) perubahan ke _branch_ Anda (`git push origin feature/nama-fitur`).
+5.  Buka **_Pull Request_** dan jelaskan perubahan yang Anda buat.
 
-Not using SSH:
+Kontribusi Anda sangat berharga bagi kami dan komunitas yang lebih luas.
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
+---
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+### 🌐 Situs Web
+
+**https://sumberweb.com**
+
+---
