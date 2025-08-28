@@ -3,7 +3,7 @@ module.exports = {
         {
             name: 'docusaurus-prod',
             script: 'npx',
-            args: 'docusaurus serve --host portfolio.user.cloudjkt02.com --port 3000',
+            args: 'docusaurus serve --host 0.0.0.0 --port 3000',
             interpreter: 'none',
             cwd: '/home/jelastic/ROOT',
             env: {
