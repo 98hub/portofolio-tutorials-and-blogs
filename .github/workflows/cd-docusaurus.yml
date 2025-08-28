@@ -1,0 +1,49 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Docusaurus CD
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute Deployment via Jelastic API
+        env:
+          JELASTIC_API_HOST: app.infra.dewacloud.com
+          JELASTIC_TOKEN: ${{ secrets.JELASTIC_TOKEN }}
+          ENV_NAME: ${{ secrets.ENV_NAME }}
+          NODE_ID: ${{ secrets.NODE_ID }}
+        run: |
+          echo "Preparing chained command JSON..."
+
+          COMMAND_JSON='[
+            {"command": "cd /home/jelastic/ROOT && git pull origin master && npm install && npm run build"},
+            {"command": "pm2 restart my-website"}
+          ]'
+          
+          echo "Executing remote commands via API..."
+
+          API_RESPONSE=$(curl -sk "https://${JELASTIC_API_HOST}/1.0/environment/control/rest/execcmdbyid" \
+            --data-urlencode "session=${JELASTIC_TOKEN}" \
+            --data-urlencode "envname=${ENV_NAME}" \
+            --data-urlencode "nodeid=${NODE_ID}" \
+            --data-urlencode "commandList=${COMMAND_JSON}")
+          
+          echo "API Response: $API_RESPONSE"
+          
+          RESULT_CODE=$(echo $API_RESPONSE | jq -r .result)
+          if [ "$RESULT_CODE" != "0" ]; then
+            echo "::error::Command execution failed. See response above."
+            exit 1
+          fi
+          
+          COMMAND_OUTPUTS=$(echo $API_RESPONSE | jq -r .responses)
+          echo "--- Deployment Script Output ---"
+          echo "$COMMAND_OUTPUTS"
+          echo "------------------------------"
+          
+          echo "✅ Deployment commands executed successfully via API."
