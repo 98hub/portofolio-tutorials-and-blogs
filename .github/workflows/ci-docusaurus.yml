@@ -16,5 +16,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22.x
+      - run: npm clear
       - run: npm install
       - run: npm run build
