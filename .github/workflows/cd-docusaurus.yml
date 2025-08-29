@@ -21,7 +21,7 @@ jobs:
           echo "Preparing chained command JSON..."
 
           COMMAND_JSON='[
-            {"command": "cd /home/jelastic/ROOT && git pull origin master && npm run clear && npm install && npm run build"},
+            {"command": "cd /home/jelastic/ROOT && git pull origin master && npm install && npm run clear && npm run build"},
             {"command": "pm2 restart portfolio"}
           ]'
           
